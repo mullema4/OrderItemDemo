@@ -19,6 +19,7 @@ public class ItemService {
     @Scheduled(initialDelay = 1200)
     @Transactional
     public void dummyUpdate() {
+        // will not execute any SQL update since the manipulated item does not differ from the persisted row
         System.out.println("Performing dummy item update");
         List<Item> items = itemRepository.findAll();
         String originalName = items.get(0).getName();
